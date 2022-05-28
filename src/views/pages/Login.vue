@@ -30,7 +30,9 @@
                   </CInputGroup>
                   <CRow>
                     <CCol :xs="6">
-                      <CButton color="primary" class="px-4"> Login </CButton>
+                      <router-link to="/dashboard">
+                        <CButton color="primary" class="px-4"> Login </CButton>
+                      </router-link>
                     </CCol>
                     <CCol :xs="6" class="text-right">
                       <CButton color="link" class="px-0">
@@ -50,8 +52,18 @@
                     sed do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua.
                   </p>
-                  <CButton color="light" variant="outline" class="mt-3">
-                    Register Now!
+                  <CButton variant="outline" class="mt-3">
+                    <router-link
+                      style="
+                        color: white;
+                        text-decoration: none;
+                        outline: 1px solid white;
+                        padding: 4px;
+                      "
+                      to="/register"
+                    >
+                      Register Now!
+                    </router-link>
                   </CButton>
                 </div>
               </CCardBody>

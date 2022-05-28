@@ -33,7 +33,7 @@
               />
             </CRow>
           </CCardBody>
-          <CCardFooter>
+          <!-- <CCardFooter>
             <CRow :xs="{ cols: 1 }" :md="{ cols: 5 }" class="text-center">
               <CCol class="mb-sm-2 mb-0">
                 <div class="text-medium-emphasis">Visits</div>
@@ -85,12 +85,12 @@
                 <CProgress class="mt-2" :value="40" thin :precision="1" />
               </CCol>
             </CRow>
-          </CCardFooter>
+          </CCardFooter> -->
         </CCard>
       </CCol>
     </CRow>
-    <WidgetsStatsD />
-    <CRow>
+    <!-- <WidgetsStatsD /> -->
+    <!-- <CRow>
       <CCol :md="12">
         <CCard class="mb-4">
           <CCardHeader> Traffic &amp; Sales </CCardHeader>
@@ -264,7 +264,7 @@
           </CCardBody>
         </CCard>
       </CCol>
-    </CRow>
+    </CRow> -->
   </div>
 </template>
 
@@ -277,14 +277,14 @@ import avatar5 from '@/assets/images/avatars/5.jpg'
 import avatar6 from '@/assets/images/avatars/6.jpg'
 import MainChartExample from './charts/MainChartExample'
 import WidgetsStatsA from './widgets/WidgetsStatsTypeA.vue'
-import WidgetsStatsD from './widgets/WidgetsStatsTypeD.vue'
+// import WidgetsStatsD from './widgets/WidgetsStatsTypeD.vue'
 
 export default {
   name: 'Dashboard',
   components: {
     MainChartExample,
     WidgetsStatsA,
-    WidgetsStatsD,
+    // WidgetsStatsD,
   },
   setup() {
     const progressGroupExample1 = [
