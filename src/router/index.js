@@ -6,23 +6,21 @@ import DefaultLayout from '@/layouts/DefaultLayout'
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: DefaultLayout,
-    redirect: '/dashboard',
+    name: 'Login',
+    // component: DefaultLayout,
+    component: function () {
+      return import('@/views/pages/Login.vue')
+    },
+    redirect: '/login',
     children: [
       {
-        path: '/dashboard',
-        name: 'Dashboard',
+        path: '/login',
+        name: 'Login',
         // route level code-splitting
         // this generates a separate chunk (about.[hash].js) for this route
         // which is lazy-loaded when the route is visited.
         component: () =>
-          import(/* webpackChunkName: "dashboard" */ '@/views/Dashboard.vue'),
-      },
-      {
-        path: '/theme',
-        name: 'Theme',
-        redirect: '/theme/typography',
+          import(/* webpackChunkName: "dashboard" */ '@/views/pages/Login.vue'),
       },
       {
         path: '/theme/colors',
@@ -262,6 +260,33 @@ const routes = [
     ],
   },
   {
+    path: '/register',
+    name: 'Register',
+    component: () => import('@/views/pages/Register.vue'),
+  },
+  {
+    name: 'Dashboard',
+    path: '/dashboard',
+    component: DefaultLayout,
+    redirect: '/dashboard',
+    children: [
+      {
+        path: '/dashboard',
+        name: 'Dashboard',
+        component: () => {
+          return import('@/views/Dashboard.vue')
+        },
+      },
+      {
+        path: '/menu',
+        name: 'Menu',
+        component: () => {
+          return import('@/views/pages/Menu.vue')
+        },
+      },
+    ],
+  },
+  {
     path: '/pages',
     redirect: '/pages/404',
     name: 'Pages',
@@ -281,16 +306,16 @@ const routes = [
         name: 'Page500',
         component: () => import('@/views/pages/Page500'),
       },
-      {
-        path: 'login',
-        name: 'Login',
-        component: () => import('@/views/pages/Login'),
-      },
-      {
-        path: 'register',
-        name: 'Register',
-        component: () => import('@/views/pages/Register'),
-      },
+      // {
+      //   path: 'login',
+      //   name: 'Login',
+      //   component: () => import('@/views/pages/Login'),
+      // },
+      // {
+      //   path: 'register',
+      //   name: 'Register',
+      //   component: () => import('@/views/pages/Register'),
+      // },
     ],
   },
 ]
